@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="bs" data-bs-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarik Tires - Termini</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" type="image/jpg" href="assets/img/favicon.jpg" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img
+            src="assets/img/favicon.jpg"
+            alt="Logo"
+            width="40"
+            height="40"
+            class="me-2 rounded-circle"
+          />
+          Tarik Tires
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Početna</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Usluge</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="appointments.html">Termini</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="location.html">Lokacija</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">O nama</a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <button
+                id="theme-toggle"
+                class="btn btn-outline-secondary btn-sm"
+              >
+                <i class="fas fa-adjust"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container my-5">
+      <section class="max-w-75 mx-auto">
+        <h1 class="text-center mb-4">Rezervišite Vaš Termin</h1>
+        <form
+          data-netlify="true"
+          class="needs-validation border p-4 rounded shadow-sm"
+          novalidate
+        >
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="name" class="form-label">Ime i Prezime</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                required
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="phone" class="form-label">Broj telefona</label>
+              <input
+                type="tel"
+                class="form-control"
+                id="phone"
+                name="phone"
+                required
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email Adresa</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                required
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="service" class="form-label">Vrsta Usluge</label>
+              <select class="form-select" id="service" name="service" required>
+                <option value="" disabled selected>Odaberite uslugu...</option>
+                <option value="zamjena">Zamjena Guma</option>
+                <option value="popravak">Popravak Pukotina</option>
+                <option value="balansiranje">Balansiranje Guma</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label for="appointmentDate" class="form-label"
+                >Datum i Vrijeme</label
+              >
+              <input
+                type="datetime-local"
+                class="form-control"
+                id="appointmentDate"
+                name="appointmentDate"
+                required
+              />
+            </div>
+            <div class="col-12">
+              <label for="notes" class="form-label">Dodatne Napomene</label>
+              <textarea
+                class="form-control"
+                id="notes"
+                name="notes"
+                rows="3"
+              ></textarea>
+            </div>
+            <div class="col-12 text-center">
+              <button type="submit" class="btn btn-warning btn-lg">
+                Potvrdi Rezervaciju
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="bg-body-tertiary py-4 mt-5">
+      <div class="container text-center">
+        <p>&copy; Tarik Tire | Sva prava zadržana.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/theme.js"></script>
+  </body>
+</html>

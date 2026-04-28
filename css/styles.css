@@ -1,0 +1,524 @@
+/* Global Variables (Colors & Fonts) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-link {
+  @apply text-base font-semibold transition-colors duration-300;
+  @apply text-gray-600 hover:text-brand-accent;
+  @apply dark:text-gray-300 dark:hover:text-brand-accent;
+}
+
+/*:root {
+    /* Main Theme Colors */
+/*  --primary-bg: #1a202c; /* Deep Charcoal/Slate - For Header & Dark Sections */
+/*--accent-red: #e53e3e; /* Crimson Red - For CTAs and Bold Accents */
+/* --accent-blue: #3182ce; /* Vibrant Blue - For Links and secondary highlights */
+
+/* Text & Background */
+/*--text-light: #f7fafc; /* Near-White Text for dark backgrounds */
+/*  --text-dark: #2d3748; /* Dark Slate Text for light backgrounds */
+/*--background-light: #f9f9fb; /* Very light, clean background */
+/*--card-bg: #ffffff;
+    --border-color: #e2e8f0; /* Light gray border */
+
+/* Font Stack */
+/*--font-stack: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}*/
+
+/* Reset and Base Styles */
+/** {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-stack);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--background-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: color 0.3s, opacity 0.3s;
+}
+
+a:hover {
+    color: var(--accent-red);
+    opacity: 0.9;
+    text-decoration: underline;
+}
+*/
+/* Headings */
+/*h1 {
+    font-size: 2em;
+    font-weight: 800;
+    color: var(--text-light); /* H1 is always in the dark header */
+/*}
+
+h2 {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--text-dark);
+    border-bottom: 4px solid var(--accent-red); /* Bold, red underline */
+/*  padding-bottom: 0.2em;
+    margin-top: 1em;
+    margin-bottom: 0.75em;
+}
+
+h3, h4, h5 {
+    color: var(--primary-bg);
+    margin-bottom: 0.5em;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+/* Main Content Area & Card Styles */
+/*main {
+    flex-grow: 1;
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0;
+}
+
+section, main > div {
+    background-color: var(--card-bg);
+    padding: 30px 40px;
+    margin-bottom: 25px;
+    border-radius: 12px; /* Smoother, modern corners */
+/*  box-shadow: 0 10px 30px rgba(26, 32, 44, 0.1); /* Stronger, modern shadow */
+/* transition: box-shadow 0.3s;
+}
+
+section:hover, main > div:hover {
+    box-shadow: 0 15px 40px rgba(26, 32, 44, 0.15);
+}
+
+/* Utility Mocking */
+/*.my-5 { margin-top: 3rem !important; margin-bottom: 3rem !important; }
+.mt-3 { margin-top: 1rem !important; }
+.p-4 { padding: 1.5rem !important; }
+.border { border: 1px solid var(--border-color) !important; }
+.rounded { border-radius: 0.75rem !important; }
+
+/* Header & Navigation */
+/*.page-header {
+    background: var(--primary-bg);
+    padding: 15px 30px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-logo img {
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    border: 3px solid var(--accent-red);
+    object-fit: cover;
+}
+
+.navbar {
+    margin-left: auto;
+}
+
+/* Dropdown toggler is hidden by default on desktop */
+/*.navbar-toggler {
+    display: none;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul li {
+    margin: 0 10px;
+}
+
+.nav-link {
+    color: var(--text-light);
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
+}
+
+.nav-link.active {
+    background-color: var(--accent-red);
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    background-color: var(--accent-blue);
+    text-decoration: none;
+}
+
+.navbar .btn {
+    margin-left: 20px;
+    padding: 10px 20px;
+}
+
+/* Buttons */
+/*.btn, .btn-primary, .cta-button {
+    background-color: var(--accent-red);
+    color: var(--text-light);
+    padding: 14px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s, transform 0.15s, box-shadow 0.3s;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(229, 62, 62, 0.4);
+}
+
+.btn:hover, .btn-primary:hover, .cta-button:hover {
+    background-color: #c53030;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(229, 62, 62, 0.6);
+}
+
+.cta-button {
+    font-size: 1.3em;
+    padding: 18px 35px;
+    margin-top: 20px;
+}
+
+.btn-info { /* Used for location button */
+/*  background-color: var(--accent-blue);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 600;
+}
+
+.btn-info:hover {
+    background-color: #2b6cb0;
+}
+
+.btn-secondary {
+    background-color: #a0aec0; /* Light Gray */
+/*  color: var(--text-dark);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 600;
+}
+
+.btn-secondary:hover {
+    background-color: #718096;
+    color: white;
+}
+
+/* Card/Layout Row Styles */
+/*.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.row > div[class^="#"] {
+    flex: 1 1 calc(50% - 30px);
+    min-width: 300px;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.shadow {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+/*.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 0.95em;
+}
+
+.form-control,
+.form-select,
+textarea.form-control {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1em;
+    line-height: 1.5;
+    color: var(--text-dark);
+    background-color: var(--background-white);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea.form-control:focus {
+    border-color: var(--accent-blue); 
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.3); /* Blue focus ring */
+/*}
+
+.mb-3 {
+    margin-bottom: 1.5rem !important;
+}
+
+/* Table Styles */
+/*.table {
+    width: 100%;
+    margin-top: 20px;
+    color: var(--text-dark);
+    border-collapse: separate; /* Use separate for border-radius */
+/*  border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table th,
+.table td {
+    padding: 15px 20px;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table thread { 
+    background-color: var(--primary-bg);
+    color: var(--text-light);
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: none;
+    font-weight: 700;
+}
+
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.table tbody tr:nth-of-type(odd) {
+    background-color: rgba(226, 232, 240, 0.2); /* Light gray zebra striping */
+/*}
+
+/* List Group Styles (Services Page) */
+/*.list-group {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.list-group-item {
+    padding: 18px 25px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+.list-group-item:hover {
+    background-color: var(--background-light);
+    color: var(--primary-bg);
+    transform: translateX(5px);
+}
+
+/* Add a bold, red icon to list items */
+/*.list-group-item::before {
+    content: "\f058"; /* Check-circle icon from Font Awesome */
+/*  font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--accent-red);
+    margin-right: 15px;
+    font-size: 1.3em;
+}
+
+/* Footer and Social Media */
+/*.footer {
+    background: var(--primary-bg);
+    color: var(--text-light);
+    text-align: center;
+    padding: 30px 0;
+    margin-top: auto;
+    font-size: 0.95em;
+    border-top: 5px solid var(--accent-red);
+}
+
+.footer a {
+    color: var(--accent-blue);
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: var(--accent-red);
+}
+
+.social-media {
+    margin-top: 15px;
+}
+
+.social-media a {
+    color: var(--text-light);
+    font-size: 1.8em;
+    margin: 0 12px;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.social-media a:hover {
+    color: var(--accent-red);
+    transform: scale(1.1);
+}
+
+/* Modal/Message Box Styling */
+/*div[class*="#5"], .modal.fade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+    border-bottom: 2px solid var(--border-color);
+    background-color: var(--background-light);
+}
+
+.modal-title {
+    color: var(--primary-bg);
+}
+
+/* Mobile Responsiveness */
+/*@media (max-width: 992px) {
+    .row > div[class^="#"] {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 15px 20px;
+        align-items: center;
+    }
+
+    #header-title h1 {
+        margin: 0 0 0 15px;
+        font-size: 1.4em;
+    }
+    
+    .navbar-toggler {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .navbar-toggler-icon::before {
+  /*      content: "\f0c9"; /* Menu bars icon */
+/*    font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        color: var(--text-light);
+        font-size: 1.5em;
+    }
+
+    .collapse.navbar-collapse {
+        display: none; 
+        width: 100%;
+        margin-top: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    /* FIX: When 'open' class is added by JavaScript, display the menu as a column */
+/*.collapse.navbar-collapse.open {
+        display: flex;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar ul li {
+        margin: 5px 0;
+        width: 100%;
+    }
+
+    .nav-link {
+        display: block;
+        text-align: left;
+        width: 100%;
+        padding: 12px 15px;
+    }
+    
+    .navbar .btn {
+        margin: 10px 0 0 0;
+        width: 100%;
+        display: block;
+    }
+
+    main {
+        width: 95%;
+    }
+}*/
