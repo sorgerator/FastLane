@@ -1,82 +1,523 @@
 <!doctype html>
-<html lang="bs" data-bs-theme="light">
+<html lang="bs" data-theme="light" data-title-key="meta.title.contact">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tarik Tires - Kontakt</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
+    <meta
+      name="description"
+      content="Kontaktirajte FastLane Sarajevo — Upiti za cijene guma, flotno održavanje i 24/7 mobilni vulkanizer u Sarajevu."
     />
+    <title>Kontakt i Pomoć na Putu | FastLane Sarajevo</title>
+    <link rel="icon" type="image/jpg" href="assets/img/favicon.jpg" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Outfit", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <!-- Custom CSS3 Stylesheet -->
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">Tarik Tires</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Početna</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="services.html">Usluge</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="appointments.html">Termini</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="contact.html">Kontakt</a>
-            </li>
-            <li class="nav-item">
-              <button
-                id="theme-toggle"
-                class="btn btn-outline-secondary btn-sm ms-2"
-              >
-                Theme
-              </button>
-            </li>
-          </ul>
+  <body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950">
+    <!-- Top Info Bar -->
+    <div class="bg-slate-900 text-slate-300 text-xs border-b border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-2">
+        <div class="flex items-center gap-4">
+          <span class="inline-flex items-center gap-1.5">
+            <i class="fas fa-location-dot text-amber-500"></i>
+            <span>Džemala Bijedića 160, Sarajevo</span>
+          </span>
+          <a
+            href="tel:+38733712400"
+            class="hidden sm:inline-flex items-center gap-1.5 hover:text-amber-400 transition-colors font-mono-num"
+          >
+            <i class="fas fa-phone text-amber-500"></i>
+            <span>+387 33 712 400</span>
+          </a>
+        </div>
+        <div class="live-shop-status inline-flex items-center gap-2 font-medium text-slate-200">
+          <span class="status-dot w-2 h-2 rounded-full bg-emerald-500 pulse-dot"></span>
+          <span class="status-text" data-i18n="status.open">Otvoreno danas • 08:00 – 19:00</span>
         </div>
       </div>
-    </nav>
-
-    <div class="container my-5">
-      <form data-netlify="true" class="needs-validation" novalidate>
-        <div class="mb-3">
-          <label for="name" class="form-label">Ime i Prezime</label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            name="name"
-            required
-          />
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            name="email"
-            required
-          />
-        </div>
-        <button type="submit" class="btn btn-primary">Pošalji</button>
-      </form>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+    <!-- Sticky Glassmorphism Navbar -->
+    <header class="glass-nav sticky top-0 z-50">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main Navigation">
+        <div class="flex items-center justify-between h-20">
+          <!-- Brand Logo -->
+          <a href="index.html" class="flex items-center gap-3 group">
+            <div class="relative w-12 h-12 rounded-xl overflow-hidden ring-2 ring-amber-500/80 shadow-md group-hover:scale-105 transition-transform bg-white">
+              <img
+                src="assets/img/favicon.jpg"
+                alt="FastLane Sarajevo Logo"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <span class="font-display text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                Fast<span class="text-amber-500">Lane</span>
+              </span>
+              <span
+                class="block text-[11px] font-medium text-slate-500 dark:text-slate-400 leading-none mt-0.5"
+                data-i18n="nav.subtitle"
+              >
+                Vulkanizer &amp; Auto Servis Sarajevo
+              </span>
+            </div>
+          </a>
+
+          <!-- Desktop Nav Links -->
+          <ul class="hidden lg:flex items-center gap-7 text-sm font-semibold">
+            <li>
+              <a
+                href="index.html"
+                class="fl-nav-link text-slate-700 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400"
+                data-i18n="nav.home"
+              >
+                Početna
+              </a>
+            </li>
+            <li>
+              <a
+                href="services.html"
+                class="fl-nav-link text-slate-700 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400"
+                data-i18n="nav.services"
+              >
+                Usluge
+              </a>
+            </li>
+            <li>
+              <a
+                href="appointments.html"
+                class="fl-nav-link text-slate-700 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400"
+                data-i18n="nav.appointments"
+              >
+                Termini
+              </a>
+            </li>
+            <li>
+              <a
+                href="location.html"
+                class="fl-nav-link text-slate-700 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400"
+                data-i18n="nav.location"
+              >
+                Lokacija
+              </a>
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="fl-nav-link text-slate-700 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400"
+                data-i18n="nav.about"
+              >
+                O nama
+              </a>
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="fl-nav-link active text-amber-600 dark:text-amber-400"
+                data-i18n="nav.contact"
+              >
+                Kontakt
+              </a>
+            </li>
+          </ul>
+
+          <!-- Controls -->
+          <div class="hidden lg:flex items-center gap-3">
+            <button
+              id="lang-toggle"
+              type="button"
+              class="lang-toggle-btn inline-flex items-center gap-1 p-1 rounded-lg bg-slate-200/80 dark:bg-slate-800 border border-slate-300/80 dark:border-slate-700 hover:border-amber-500 transition-all"
+              aria-label="Switch language"
+            >
+              <span class="lang-bs px-2 py-0.5 rounded-md bg-amber-500 text-slate-950 font-bold text-xs">BS</span>
+              <span class="lang-en px-2 py-0.5 rounded-md text-slate-600 dark:text-slate-400 font-medium text-xs">EN</span>
+            </button>
+
+            <button
+              id="theme-toggle"
+              type="button"
+              class="theme-toggle-btn w-10 h-10 rounded-lg bg-slate-200/80 dark:bg-slate-800 border border-slate-300/80 dark:border-slate-700 flex items-center justify-center hover:border-amber-500 transition-all"
+              aria-label="Toggle theme"
+            >
+              <i class="fas fa-moon text-slate-700"></i>
+            </button>
+
+            <a
+              href="appointments.html"
+              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/25 transition-all"
+            >
+              <i class="far fa-calendar-check"></i>
+              <span data-i18n="nav.book_now">Zakaži Termin</span>
+            </a>
+          </div>
+
+          <!-- Mobile Actions -->
+          <div class="flex lg:hidden items-center gap-2">
+            <button
+              type="button"
+              class="lang-toggle-btn inline-flex items-center gap-0.5 p-1 rounded-lg bg-slate-200/80 dark:bg-slate-800 border border-slate-300 dark:border-slate-700"
+              aria-label="Switch language"
+            >
+              <span class="lang-bs px-1.5 py-0.5 rounded bg-amber-500 text-slate-950 font-bold text-[11px]">BS</span>
+              <span class="lang-en px-1.5 py-0.5 rounded text-slate-600 dark:text-slate-400 font-medium text-[11px]">EN</span>
+            </button>
+
+            <button
+              type="button"
+              class="theme-toggle-btn w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center"
+              aria-label="Toggle theme"
+            >
+              <i class="fas fa-moon text-slate-700"></i>
+            </button>
+
+            <button
+              id="mobile-menu-btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="Open navigation menu"
+              class="w-10 h-10 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center shadow-sm"
+            >
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div
+          id="mobile-menu"
+          class="hidden lg:hidden pb-5 pt-2 border-t border-slate-200 dark:border-slate-800 space-y-2"
+        >
+          <a href="index.html" class="block px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/60 dark:hover:bg-slate-800 font-semibold text-sm" data-i18n="nav.home">Početna</a>
+          <a href="services.html" class="block px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/60 dark:hover:bg-slate-800 font-semibold text-sm" data-i18n="nav.services">Usluge</a>
+          <a href="appointments.html" class="block px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/60 dark:hover:bg-slate-800 font-semibold text-sm" data-i18n="nav.appointments">Termini</a>
+          <a href="location.html" class="block px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/60 dark:hover:bg-slate-800 font-semibold text-sm" data-i18n="nav.location">Lokacija</a>
+          <a href="about.html" class="block px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/60 dark:hover:bg-slate-800 font-semibold text-sm" data-i18n="nav.about">O nama</a>
+          <a href="contact.html" class="block px-4 py-2.5 rounded-xl bg-amber-500/15 text-amber-600 dark:text-amber-400 font-bold text-sm" data-i18n="nav.contact">Kontakt</a>
+          <div class="pt-2">
+            <a href="appointments.html" class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-amber-500 text-slate-950 font-bold text-sm shadow-md">
+              <i class="far fa-calendar-check"></i>
+              <span data-i18n="nav.book_now">Zakaži Termin</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+      <!-- Hero -->
+      <section class="hero-mesh carbon-grid py-12 sm:py-16 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+          <span
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-bold mb-4"
+            data-i18n="contact.hero.badge"
+          >
+            Tu Smo Za Vas
+          </span>
+          <h1
+            class="font-display text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white"
+            data-i18n="contact.hero.title"
+          >
+            Kontaktirajte FastLane Tim
+          </h1>
+          <p
+            class="text-base sm:text-lg text-slate-600 dark:text-slate-300 mt-4 leading-relaxed"
+            data-i18n="contact.hero.subtitle"
+          >
+            Imate pitanje o dostupnosti dimenzije guma, trebate ponudu za firmu ili pomoć na putu? Javite nam se odmah.
+          </p>
+        </div>
+      </section>
+
+      <!-- Direct Contact Channels + Inquiry Form -->
+      <section class="py-14 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- 3 Contact Cards Row -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <a
+              href="tel:+38733712400"
+              class="fl-card rounded-2xl p-6 flex items-center gap-4 group"
+            >
+              <div class="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-500 flex items-center justify-center shrink-0 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                <i class="fas fa-phone-volume text-xl"></i>
+              </div>
+              <div>
+                <span class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400" data-i18n="contact.card.phone">
+                  Servis i Rezervacije
+                </span>
+                <span class="font-mono-num text-lg font-extrabold text-slate-900 dark:text-white">
+                  +387 33 712 400
+                </span>
+              </div>
+            </a>
+
+            <a
+              href="tel:+38761555890"
+              class="fl-card rounded-2xl p-6 flex items-center gap-4 group"
+            >
+              <div class="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-500 flex items-center justify-center shrink-0 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                <i class="fas fa-truck-medical text-xl"></i>
+              </div>
+              <div>
+                <span class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400" data-i18n="contact.card.emergency">
+                  24/7 Mobilni Vulkanizer (BiH)
+                </span>
+                <span class="font-mono-num text-lg font-extrabold text-amber-600 dark:text-amber-400">
+                  +387 61 555 890
+                </span>
+              </div>
+            </a>
+
+            <a
+              href="mailto:info@fastlane.ba"
+              class="fl-card rounded-2xl p-6 flex items-center gap-4 group"
+            >
+              <div class="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-500 flex items-center justify-center shrink-0 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                <i class="fas fa-envelope-open-text text-xl"></i>
+              </div>
+              <div>
+                <span class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400" data-i18n="contact.card.email">
+                  Email Podrška i Ponude
+                </span>
+                <span class="font-mono-num text-lg font-extrabold text-slate-900 dark:text-white">
+                  info@fastlane.ba
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Contact Form Card -->
+          <div class="max-w-3xl mx-auto fl-card rounded-3xl p-6 sm:p-10">
+            <h2
+              class="font-display text-2xl font-extrabold text-slate-900 dark:text-white mb-6"
+              data-i18n="contact.form.title"
+            >
+              Pošaljite Nam Upit
+            </h2>
+
+            <!-- Error Alert -->
+            <div
+              id="contact-error-alert"
+              class="hidden mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/40 text-red-600 dark:text-red-400 text-sm font-medium flex items-center gap-3"
+            >
+              <i class="fas fa-circle-exclamation text-lg"></i>
+              <span data-i18n="appt.form.error_msg">Molimo popunite sva obavezna polja ispravno.</span>
+            </div>
+
+            <!-- Success Alert -->
+            <div
+              id="contact-success-alert"
+              class="hidden mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/40 text-emerald-700 dark:text-emerald-300 text-sm font-medium flex items-center gap-3"
+            >
+              <i class="fas fa-circle-check text-lg text-emerald-500"></i>
+              <span data-i18n="contact.form.success">
+                Hvala vam! Vaša poruka je uspješno poslana. Odgovorit ćemo vam u najkraćem roku.
+              </span>
+            </div>
+
+            <form id="contact-form" data-netlify="true" novalidate class="space-y-5">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label
+                    for="name"
+                    class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-1.5"
+                    data-i18n="contact.form.name"
+                  >
+                    Ime i Prezime *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    data-i18n-placeholder="appt.form.name_ph"
+                    placeholder="npr. Tarik Sorguč"
+                    class="fl-input w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-sm text-slate-900 dark:text-white"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    for="email"
+                    class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-1.5"
+                    data-i18n="contact.form.email"
+                  >
+                    Email Adresa *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    data-i18n-placeholder="appt.form.email_ph"
+                    placeholder="vas.email@primjer.ba"
+                    class="fl-input w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-sm text-slate-900 dark:text-white"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    for="phone"
+                    class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-1.5"
+                    data-i18n="contact.form.phone"
+                  >
+                    Broj Telefona
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    data-i18n-placeholder="appt.form.phone_ph"
+                    placeholder="+387 61 123 456"
+                    class="fl-input w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-sm text-slate-900 dark:text-white font-mono-num"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    for="subject"
+                    class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-1.5"
+                    data-i18n="contact.form.subject"
+                  >
+                    Predmet Upita *
+                  </label>
+                  <select
+                    id="subject"
+                    name="subject"
+                    required
+                    class="fl-input w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-sm text-slate-900 dark:text-white"
+                  >
+                    <option value="quote" data-i18n="contact.form.sub_quote">Upit za cijenu i dostupnost guma</option>
+                    <option value="service" data-i18n="contact.form.sub_service">Pitanje u vezi servisa / optike trapa</option>
+                    <option value="b2b" data-i18n="contact.form.sub_b2b">Flotno održavanje za firme (B2B)</option>
+                    <option value="other" data-i18n="contact.form.sub_other">Ostalo / Pohvale i sugestije</option>
+                  </select>
+                </div>
+
+                <div class="sm:col-span-2">
+                  <label
+                    for="message"
+                    class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-1.5"
+                    data-i18n="contact.form.message"
+                  >
+                    Vaša Poruka *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    required
+                    data-i18n-placeholder="contact.form.message_ph"
+                    placeholder="Upišite dimenziju guma (npr. 225/45 R17) ili vaše pitanje..."
+                    class="fl-input w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-sm text-slate-900 dark:text-white"
+                  ></textarea>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-base shadow-lg shadow-amber-500/25 transition-all"
+              >
+                <i class="fas fa-paper-plane"></i>
+                <span data-i18n="contact.form.submit">Pošalji Poruku</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 pt-14 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-slate-800">
+          <div class="space-y-4">
+            <a href="index.html" class="flex items-center gap-3">
+              <img src="assets/img/favicon.jpg" alt="FastLane Logo" class="w-10 h-10 rounded-xl bg-white p-0.5" />
+              <span class="font-display text-xl font-extrabold text-white">
+                Fast<span class="text-amber-500">Lane</span> Sarajevo
+              </span>
+            </a>
+            <p class="text-sm text-slate-400 leading-relaxed" data-i18n="footer.desc">
+              Vodeći moderni vulkanizerski centar i auto servis u Sarajevu. Vrhunska oprema, stručno osoblje i beskompromisna briga o vašoj sigurnosti na putu.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4" data-i18n="footer.nav_title">Navigacija</h4>
+            <ul class="space-y-2.5 text-sm">
+              <li><a href="index.html" class="hover:text-amber-400 transition-colors" data-i18n="nav.home">Početna</a></li>
+              <li><a href="services.html" class="hover:text-amber-400 transition-colors" data-i18n="nav.services">Usluge</a></li>
+              <li><a href="appointments.html" class="hover:text-amber-400 transition-colors" data-i18n="nav.appointments">Termini</a></li>
+              <li><a href="location.html" class="hover:text-amber-400 transition-colors" data-i18n="nav.location">Lokacija</a></li>
+              <li><a href="about.html" class="hover:text-amber-400 transition-colors" data-i18n="nav.about">O nama</a></li>
+              <li><a href="contact.html" class="hover:text-amber-400 transition-colors" data-i18n="nav.contact">Kontakt</a></li>
+              <li><a href="privacy.html" class="hover:text-amber-400 transition-colors" data-i18n="nav.privacy">Privatnost</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4" data-i18n="footer.srv_title">Naše Usluge</h4>
+            <ul class="space-y-2.5 text-sm">
+              <li><a href="services.html" class="hover:text-amber-400 transition-colors" data-i18n="home.srv1.title">Sezonska zamjena guma</a></li>
+              <li><a href="services.html" class="hover:text-amber-400 transition-colors" data-i18n="home.srv2.title">Precizno 3D balansiranje</a></li>
+              <li><a href="services.html" class="hover:text-amber-400 transition-colors" data-i18n="home.srv3.title">3D Laserska optika trapa</a></li>
+              <li><a href="services.html" class="hover:text-amber-400 transition-colors" data-i18n="home.srv4.title">Sezonski Hotel za gume</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4" data-i18n="footer.contact_title">Kontakt &amp; Radno Vrijeme</h4>
+            <ul class="space-y-2.5 text-sm">
+              <li class="flex items-start gap-2.5">
+                <i class="fas fa-location-dot text-amber-500 mt-1"></i>
+                <span>Džemala Bijedića 160, 71000 Sarajevo, BiH</span>
+              </li>
+              <li class="flex items-center gap-2.5 font-mono-num">
+                <i class="fas fa-phone text-amber-500"></i>
+                <a href="tel:+38733712400" class="hover:text-amber-400">+387 33 712 400</a>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fas fa-envelope text-amber-500"></i>
+                <a href="mailto:info@fastlane.ba" class="hover:text-amber-400">info@fastlane.ba</a>
+              </li>
+              <li class="flex items-center gap-2.5 text-xs text-slate-400 pt-1">
+                <i class="far fa-clock text-amber-500"></i>
+                <span>Pon – Sub: 08:00 – 19:00</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <p data-i18n="footer.rights">© 2026 FastLane Sarajevo (Tarik Tires). Sva prava zadržana.</p>
+          <p data-i18n="footer.capstone">Univerzitetski Capstone Projekat — Frontend Web Programming (IBU Sarajevo)</p>
+        </div>
+      </div>
+    </footer>
+
     <script src="js/theme.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

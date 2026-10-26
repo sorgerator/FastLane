@@ -1,64 +1,31 @@
-# TireShop-Project
+# FastLane Sarajevo — Tire Shop & Auto Service Web Application
 
-Software Management Tool for Tire Repair Shop
-
-A multi-phase project developed for the IBU 061 - Foundations of Web Development course111111111. This repository will track progress from a static front-end (Assignment 1) to a fully dynamic Single Page Application (Assignment 3).
+A modern, mobile-first, bilingual (**Bosnian & English**) web application with **Bright & Dark Mode** built for **FastLane Sarajevo** (*Vulkanizer & Auto Servis Sarajevo*, Džemala Bijedića 160), developed as a University Capstone Project for the **Frontend Web Programming** course at International Burch University (IBU).
 
 ---
 
-Project Overview
+## Technology Stack
 
-The goal of this project is to build a responsive, data-driven Software Management Tool for a Tire Repair Shop, starting with a client-side prototype and evolving into a Single Page Application (SPA).
-
-Key FeaturesCustomer & Service Management:
-
-1. User interfaces for tracking clients, inventory, and services.
-2. Data Simulation: Using JavaScript and AJAX to fetch and manipulate data from local JSON/XML files, simulating a server-side database connection.
-3. SPA Architecture: Implementing client-side routing for a seamless user experience.
-4. Interactivity & Validation: Robust form validation, dynamic content toggles, and UI updates.
-
----
-
-Technology Stack
-
-This project strictly adheres to the course's requirements, focusing on front-end development and best practices.
-
-1. HTML5: Structured using semantic tags (header, nav, section, article, footer)
-2. CSS3 & SASS: Styling without external CSS libraries, utilizing Sass for variables, mixins, and nesting
-3. JavaScript (Vanilla & jQuery): Core logic, interactivity, advanced form validation, and data handling via AJAX
-4. Bootstrap: Incorporated for responsiveness and design, utilizing at least 6 components (e.g., carousel, cards, modals)
-5. Tailwind CSS: Allowed for UI enhancement in Assignment 2 and onward6.
+Strictly built using only the allowed frontend technologies:
+- **HTML5**: Semantic structure (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`), accessible ARIA attributes, and `data-i18n` localization hooks.
+- **CSS3** (`css/styles.css`): Custom properties (CSS variables) for Light/Dark theme polarity, glassmorphism navigation, smooth micro-interactions, carbon-grid patterns, and responsive utilities.
+- **Tailwind CSS**: Utility-first mobile-first responsive layout (`sm:`, `md:`, `lg:`, `xl:`) and class-based dark mode (`dark:`).
+- **Vanilla JavaScript (ES6+)** (`js/theme.js` & `js/main.js`):
+  - Zero-reload **Bosnian (`BS`) / English (`EN`)** language switcher persisted in `localStorage`.
+  - **Bright / Dark Mode** theme switcher persisted in `localStorage`.
+  - **Live Sarajevo Shop Status** indicator checking local operating hours (Mon–Sat, 08:00–19:00).
+  - **Instant Service Price Estimator** on the Home page & **Interactive Cost Calculator** on the Services page (passing quotes directly into the booking form via URL parameters).
+  - **Category Filter & FAQ Accordion** on the Services page.
+  - **Online Appointment Booking & LocalStorage Appointment Manager** (`Moji Zakazani Termini` / `My Upcoming Appointments`) with booking reference codes (`#FL-XXXX`) and cancellation support.
 
 ---
 
-Development Roadmap (Semester Phases)
+## Pages Included
 
-This project is structured around the three main assignments for the course.
-
-Phase 1: Foundations & Static Content (Assignment 1)
-
-- Objective: Build a responsive web application showcasing layout, styling, and responsiveness
-- Structure: At least 4 different pages with proper HTML structure8.
-- Navigation: Implement a responsive navigation bar.
-- Core Elements: Include at least 3 types of headings, 3 different size images (with relative paths and fallback messages), 3 links (all opening in a new tab/window, one for email to amela.vatres@stu.ibu.edu.ba), 1 table, and 1 list10101010101010101010101010101010101010101010101010.
-- Forms: Add a form with validation, at least 10 different elements, and submit it using a mock API (https://jsonplaceholder.typicode.com/posts) with GET/POST11.
-- Styling: Use Sass, implement a footer (with course and author name), animations/transitions, and at least one modal/dialog.
-
-Phase 2: Dynamic Content & Interactivity (Assignment 2)
-
-- Objective: Enhance the application with dynamic content, interaction, and data handling using JavaScript/jQuery.
-- Interactivity: Implement an Interactive Gallery (with JS modals), a Content Toggle, a Theme Switcher, and an Accordion Menu.
-- Advanced Forms: Extend the form with detailed validation (e.g., date picker, password strength) and use AJAX for submission to show a success message.
-- Data Handling: Load content (e.g., product listings) from JSON or XML files via AJAX, simulating a server fetch.
-- Data Operations: Implement simulated Edit and Delete options for fetched entities, with UI updates and success messages.
-- APIs: Integrate an External RESTful API (e.g., OpenWeatherMap) to fetch and display dynamic data.
-- NotificationsUse toastr messages for success or error notifications.
-
-Phase 3: Single Page Application (SPA) (Assignment 3)
-
-- Objective: Transform the project into a functional SPA with client-side routing and state management.
-- Routing: Implement client-side routing with at least 4 distinct routes that update the URL without a full page reload.
-- Navigation: Dynamically highlight the active page in the navigation bar.
-- State Management: Implement application state management to share data across routes.
-- Persistence: Use localStorage and cookies to persist user data and login status.
-- User Auth: Implement a login page and check credentials against a local JSON file; redirect the user and display a personalized "Hello, [USERNAME]" message upon successful login.
+1. **`index.html` (Početna / Home)** — Hero section with Instant Service Price Estimator, Sarajevo workshop stats, Why Choose FastLane, Core Services preview, Goodyear Tire & B&H Winter Equipment Law (Nov 1 – Apr 1) reminder, and Sarajevo driver reviews.
+2. **`services.html` (Usluge / Services)** — Filterable 6-service catalog, Interactive Service Cost Calculator, Rim Diameter Price Table in `KM` (BAM), and FAQ accordion.
+3. **`appointments.html` (Termini / Appointments)** — Online booking form with vehicle/rim/service selectors, inline validation, and persistent "My Upcoming Appointments" panel.
+4. **`location.html` (Lokacija / Location)** — Sarajevo address (`Džemala Bijedića 160, Stup`), live open/closed hours card, embedded interactive OpenStreetMap & Google Maps link, and directions from Centar, Ilidža, and Highway A1.
+5. **`about.html` (O nama / About Us)** — FastLane Sarajevo story, Hunter HawkEye Elite® & Corghi robotic equipment showcase, and Master Technicians team profiles.
+6. **`contact.html` (Kontakt / Contact)** — Direct phone, 24/7 Mobile Tire Van emergency contact, email cards, and validated bilingual inquiry form.
+7. **`privacy.html` (Politika Privatnosti / Privacy Policy)** — Comprehensive data protection policy aligned with Bosnia & Herzegovina's Personal Data Protection Law (ZZLP) and GDPR principles.

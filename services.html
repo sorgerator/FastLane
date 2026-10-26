@@ -1,103 +1,971 @@
 <!doctype html>
-<html lang="bs" data-bs-theme="light">
+<html lang="bs" data-theme="light" data-title-key="meta.title.services">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tarik Tires - Usluge</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
+    <meta
+      name="description"
+      content="Katalog vulkanizerskih usluga i cjenovnik u KM — FastLane Sarajevo. Montaža guma, 3D balansiranje, Hunter optika trapa, krpljenje guma i sezonski hotel."
     />
+    <title>Usluge i Cjenovnik | FastLane Sarajevo</title>
+    <link rel="icon" type="image/jpg" href="assets/img/favicon.jpg" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Outfit", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
+    <!-- Custom CSS3 Stylesheet -->
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="icon" type="image/jpg" href="assets/img/favicon.jpg" />
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top shadow-sm">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-          <img
-            src="assets/img/favicon.jpg"
-            alt="Logo"
-            width="40"
-            height="40"
-            class="me-2 rounded-circle"
-          />
-          Tarik Tires
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto align-items-center">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Početna</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="services.html">Usluge</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="appointments.html">Termini</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="location.html">Lokacija</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">O nama</a>
-            </li>
-            <li class="nav-item ms-lg-3">
-              <button
-                id="theme-toggle"
-                class="btn btn-outline-secondary btn-sm"
+  <body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950">
+    <!-- Top Info Bar -->
+    <div class="bg-slate-900 text-slate-300 text-xs border-b border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-2">
+        <div class="flex items-center gap-4">
+          <span class="inline-flex items-center gap-1.5">
+            <i class="fas fa-location-dot text-amber-500"></i>
+            <span>Džemala Bijedića 160, Sarajevo</span>
+          </span>
+          <a
+            href="tel:+38733712400"
+            class="hidden sm:inline-flex items-center gap-1.5 hover:text-amber-400 transition-colors font-mono-num"
+          >
+            <i class="fas fa-phone text-amber-500"></i>
+            <span>+387 33 712 400</span>
+          </a>
+        </div>
+        <div class="live-shop-status inline-flex items-center gap-2 font-medium text-slate-200">
+          <span class="status-dot w-2 h-2 rounded-full bg-emerald-500 pulse-dot"></span>
+          <span class="status-text" data-i18n="status.open">Otvoreno danas • 08:00 – 19:00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sticky Glassmorphism Navbar -->
+    <header class="glass-nav sticky top-0 z-50">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main Navigation">
+        <div class="flex items-center justify-between h-20">
+          <!-- Brand Logo -->
+          <a href="index.html" class="flex items-center gap-3 group">
+            <div class="relative w-12 h-12 rounded-xl overflow-hidden ring-2 ring-amber-500/80 shadow-md group-hover:scale-105 transition-transform bg-white">
+              <img
+                src="assets/img/favicon.jpg"
+                alt="FastLane Sarajevo Logo"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <span class="font-display text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                Fast<span class="text-amber-500">Lane</span>
+              </span>
+              <span
+                class="block text-[11px] font-medium text-slate-500 dark:text-slate-400 leading-none mt-0.5"
+                data-i18n="nav.subtitle"
               >
-                <i class="fas fa-adjust"></i>
-              </button>
+                Vulkanizer &amp; Auto Servis Sarajevo
+              </span>
+            </div>
+          </a>
+
+          <!-- Desktop Nav Links -->
+          <ul class="hidden lg:flex items-center gap-7 text-sm font-semibold">
+            <li>
+              <a
+                href="index.html"
+                class="fl-nav-link text-slate-700 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400"
+                data-i18n="nav.home"
+              >
+                Početna
+              </a>
+            </li>
+            <li>
+              <a
+                href="services.html"
+                class="fl-nav-link active text-amber-600 dark:text-amber-400"
+                data-i18n="nav.services"
+              >
+                Usluge
+              </a>
+            </li>
+            <li>
+              <a
+                href="appointments.html"
+                class="fl-nav-link text-slate-700 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400"
+                data-i18n="nav.appointments"
+              >
+                Termini
+              </a>
+            </li>
+            <li>
+              <a
+                href="location.html"
+                class="fl-nav-link text-slate-700 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400"
+                data-i18n="nav.location"
+              >
+                Lokacija
+              </a>
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="fl-nav-link text-slate-700 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400"
+                data-i18n="nav.about"
+              >
+                O nama
+              </a>
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="fl-nav-link text-slate-700 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400"
+                data-i18n="nav.contact"
+              >
+                Kontakt
+              </a>
             </li>
           </ul>
-        </div>
-      </div>
-    </nav>
 
-    <main class="container my-5">
-      <h1 class="text-center mb-5">Naše Usluge</h1>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4">
-          <div class="card p-4">
-            <h3>Zamjena Guma</h3>
-            <p>Brza i sigurna zamjena ljetnih i zimskih guma.</p>
+          <!-- Controls: Language Switcher, Theme Switcher & CTA -->
+          <div class="hidden lg:flex items-center gap-3">
+            <button
+              id="lang-toggle"
+              type="button"
+              class="lang-toggle-btn inline-flex items-center gap-1 p-1 rounded-lg bg-slate-200/80 dark:bg-slate-800 border border-slate-300/80 dark:border-slate-700 hover:border-amber-500 transition-all"
+              aria-label="Switch language"
+            >
+              <span class="lang-bs px-2 py-0.5 rounded-md bg-amber-500 text-slate-950 font-bold text-xs">BS</span>
+              <span class="lang-en px-2 py-0.5 rounded-md text-slate-600 dark:text-slate-400 font-medium text-xs">EN</span>
+            </button>
+
+            <button
+              id="theme-toggle"
+              type="button"
+              class="theme-toggle-btn w-10 h-10 rounded-lg bg-slate-200/80 dark:bg-slate-800 border border-slate-300/80 dark:border-slate-700 flex items-center justify-center hover:border-amber-500 transition-all"
+              aria-label="Toggle theme"
+            >
+              <i class="fas fa-moon text-slate-700"></i>
+            </button>
+
+            <a
+              href="appointments.html"
+              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/25 transition-all hover:-translate-y-0.5"
+            >
+              <i class="far fa-calendar-check"></i>
+              <span data-i18n="nav.book_now">Zakaži Termin</span>
+            </a>
+          </div>
+
+          <!-- Mobile Actions -->
+          <div class="flex lg:hidden items-center gap-2">
+            <button
+              type="button"
+              class="lang-toggle-btn inline-flex items-center gap-0.5 p-1 rounded-lg bg-slate-200/80 dark:bg-slate-800 border border-slate-300 dark:border-slate-700"
+              aria-label="Switch language"
+            >
+              <span class="lang-bs px-1.5 py-0.5 rounded bg-amber-500 text-slate-950 font-bold text-[11px]">BS</span>
+              <span class="lang-en px-1.5 py-0.5 rounded text-slate-600 dark:text-slate-400 font-medium text-[11px]">EN</span>
+            </button>
+
+            <button
+              type="button"
+              class="theme-toggle-btn w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center"
+              aria-label="Toggle theme"
+            >
+              <i class="fas fa-moon text-slate-700"></i>
+            </button>
+
+            <button
+              id="mobile-menu-btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="Open navigation menu"
+              class="w-10 h-10 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center shadow-sm"
+            >
+              <i class="fas fa-bars text-xl"></i>
+            </button>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card p-4">
-            <h3>Popravka Guma</h3>
-            <p>Stručan popravak svih vrsta probušenih i oštećenih guma.</p>
+
+        <!-- Mobile Menu -->
+        <div
+          id="mobile-menu"
+          class="hidden lg:hidden pb-5 pt-2 border-t border-slate-200 dark:border-slate-800 space-y-2"
+        >
+          <a href="index.html" class="block px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/60 dark:hover:bg-slate-800 font-semibold text-sm" data-i18n="nav.home">Početna</a>
+          <a href="services.html" class="block px-4 py-2.5 rounded-xl bg-amber-500/15 text-amber-600 dark:text-amber-400 font-bold text-sm" data-i18n="nav.services">Usluge</a>
+          <a href="appointments.html" class="block px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/60 dark:hover:bg-slate-800 font-semibold text-sm" data-i18n="nav.appointments">Termini</a>
+          <a href="location.html" class="block px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/60 dark:hover:bg-slate-800 font-semibold text-sm" data-i18n="nav.location">Lokacija</a>
+          <a href="about.html" class="block px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/60 dark:hover:bg-slate-800 font-semibold text-sm" data-i18n="nav.about">O nama</a>
+          <a href="contact.html" class="block px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/60 dark:hover:bg-slate-800 font-semibold text-sm" data-i18n="nav.contact">Kontakt</a>
+          <div class="pt-2">
+            <a href="appointments.html" class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-amber-500 text-slate-950 font-bold text-sm shadow-md">
+              <i class="far fa-calendar-check"></i>
+              <span data-i18n="nav.book_now">Zakaži Termin</span>
+            </a>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card p-4">
-            <h3>Balansiranje Guma</h3>
-            <p>Precizno balansiranje za optimalnu vožnju.</p>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+      <!-- Page Hero -->
+      <section class="hero-mesh carbon-grid py-12 sm:py-16 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+          <span
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-bold mb-4"
+            data-i18n="services.hero.badge"
+          >
+            Katalog Usluga i Cjenovnik 2026
+          </span>
+          <h1
+            class="font-display text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white"
+            data-i18n="services.hero.title"
+          >
+            Profesionalne Vulkanizerske Usluge
+          </h1>
+          <p
+            class="text-base sm:text-lg text-slate-600 dark:text-slate-300 mt-4 leading-relaxed"
+            data-i18n="services.hero.subtitle"
+          >
+            Sve usluge obavljamo na certificiranoj Hunter i Corghi opremi. Odaberite kategoriju ispod ili izračunajte tačnu cijenu za vaše vozilo.
+          </p>
+
+          <!-- Category Filter Buttons -->
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-2.5">
+            <button
+              type="button"
+              data-filter="all"
+              class="service-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold border border-amber-500 bg-amber-500 text-slate-950 shadow-md transition-all"
+              data-i18n="services.filter.all"
+            >
+              Sve usluge
+            </button>
+            <button
+              type="button"
+              data-filter="mounting"
+              class="service-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:border-amber-500 transition-all"
+              data-i18n="services.filter.mounting"
+            >
+              Montaža i Balans
+            </button>
+            <button
+              type="button"
+              data-filter="repair"
+              class="service-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:border-amber-500 transition-all"
+              data-i18n="services.filter.repair"
+            >
+              Popravka i Krpljenje
+            </button>
+            <button
+              type="button"
+              data-filter="alignment"
+              class="service-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:border-amber-500 transition-all"
+              data-i18n="services.filter.alignment"
+            >
+              Optika i Dijagnostika
+            </button>
+            <button
+              type="button"
+              data-filter="storage"
+              class="service-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:border-amber-500 transition-all"
+              data-i18n="services.filter.storage"
+            >
+              Hotel za Gume
+            </button>
           </div>
         </div>
-      </div>
+      </section>
+
+      <!-- 6 Detailed Services Grid -->
+      <section class="py-14 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card 1: Seasonal Tire Change -->
+            <article data-category="mounting" class="service-card-item fl-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-5">
+                  <div class="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-500 flex items-center justify-center">
+                    <i class="fas fa-compact-disc text-2xl"></i>
+                  </div>
+                  <span
+                    class="font-mono-num text-sm font-extrabold px-3 py-1 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400"
+                    data-i18n="services.card1.price"
+                  >
+                    10 – 20 KM / točak
+                  </span>
+                </div>
+                <h2 class="font-display text-xl font-bold text-slate-900 dark:text-white mb-2.5" data-i18n="services.card1.title">
+                  Zamjena Guma (Sezonska Montaža)
+                </h2>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-5" data-i18n="services.card1.desc">
+                  Brza i sigurna demontaža i montaža ljetnih, zimskih i RunFlat guma na čeličnim i aluminijskim felgama od 13" do 22".
+                </p>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 mb-6">
+                  <li class="flex items-center gap-2">
+                    <i class="fas fa-check text-emerald-500"></i>
+                    <span data-i18n="services.card1.f1">Beskontaktna zaštita ruba alu felgi</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fas fa-check text-emerald-500"></i>
+                    <span data-i18n="services.card1.f2">Kontrola dubine šare i starosti (DOT)</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fas fa-check text-emerald-500"></i>
+                    <span data-i18n="services.card1.f3">Podešavanje pritiska po specifikaciji proizvođača</span>
+                  </li>
+                </ul>
+              </div>
+              <a
+                href="appointments.html?service=zamjena"
+                class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-slate-900 dark:bg-slate-800 hover:bg-amber-500 dark:hover:bg-amber-500 text-white hover:text-slate-950 font-bold text-sm transition-colors"
+              >
+                <span data-i18n="home.srv.book_link">Rezerviši uslugu</span>
+                <i class="fas fa-arrow-right text-xs"></i>
+              </a>
+            </article>
+
+            <!-- Card 2: Tire Puncture Repair -->
+            <article data-category="repair" class="service-card-item fl-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-5">
+                  <div class="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-500 flex items-center justify-center">
+                    <i class="fas fa-screwdriver-wrench text-2xl"></i>
+                  </div>
+                  <span
+                    class="font-mono-num text-sm font-extrabold px-3 py-1 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400"
+                    data-i18n="services.card2.price"
+                  >
+                    15 – 30 KM
+                  </span>
+                </div>
+                <h2 class="font-display text-xl font-bold text-slate-900 dark:text-white mb-2.5" data-i18n="services.card2.title">
+                  Popravka i Vulkanizacija Guma
+                </h2>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-5" data-i18n="services.card2.desc">
+                  Stručan popravak svih vrsta probušenih i oštećenih guma hladnom i toplom vulkanizacijom uz trajne Rema Tip-Top zakrpe.
+                </p>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 mb-6">
+                  <li class="flex items-center gap-2">
+                    <i class="fas fa-check text-emerald-500"></i>
+                    <span data-i18n="services.card2.f1">Unutrašnje krpljenje "gljivom" (trajna metoda)</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fas fa-check text-emerald-500"></i>
+                    <span data-i18n="services.card2.f2">Topla vulkanizacija bočnih oštećenja</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fas fa-check text-emerald-500"></i>
+                    <span data-i18n="services.card2.f3">Ispitivanje nepropusnosti u vodenoj komori</span>
+                  </li>
+                </ul>
+              </div>
+              <a
+                href="appointments.html?service=popravak"
+                class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-slate-900 dark:bg-slate-800 hover:bg-amber-500 dark:hover:bg-amber-500 text-white hover:text-slate-950 font-bold text-sm transition-colors"
+              >
+                <span data-i18n="home.srv.book_link">Rezerviši uslugu</span>
+                <i class="fas fa-arrow-right text-xs"></i>
+              </a>
+            </article>
+
+            <!-- Card 3: 3D Balancing -->
+            <article data-category="mounting" class="service-card-item fl-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-5">
+                  <div class="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-500 flex items-center justify-center">
+                    <i class="fas fa-scale-balanced text-2xl"></i>
+                  </div>
+                  <span
+                    class="font-mono-num text-sm font-extrabold px-3 py-1 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400"
+                    data-i18n="services.card3.price"
+                  >
+                    5 – 10 KM / točak
+                  </span>
+                </div>
+                <h2 class="font-display text-xl font-bold text-slate-900 dark:text-white mb-2.5" data-i18n="services.card3.title">
+                  3D Kompjutersko Balansiranje
+                </h2>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-5" data-i18n="services.card3.desc">
+                  Precizno lasersko balansiranje za optimalnu vožnju bez vibracija volana i ravnomjerno trošenje ovjesa.
+                </p>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 mb-6">
+                  <li class="flex items-center gap-2">
+                    <i class="fas fa-check text-emerald-500"></i>
+                    <span data-i18n="services.card3.f1">Skriveni samoljepljivi tegovi iza krakova alu felgi</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fas fa-check text-emerald-500"></i>
+                    <span data-i18n="services.card3.f2">Optimizacija položaja gume u odnosu na felgu</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fas fa-check text-emerald-500"></i>
+                    <span data-i18n="services.card3.f3">Mjerenje radijalnog i bočnog bacanja točka</span>
+                  </li>
+                </ul>
+              </div>
+              <a
+                href="appointments.html?service=balansiranje"
+                class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-slate-900 dark:bg-slate-800 hover:bg-amber-500 dark:hover:bg-amber-500 text-white hover:text-slate-950 font-bold text-sm transition-colors"
+              >
+                <span data-i18n="home.srv.book_link">Rezerviši uslugu</span>
+                <i class="fas fa-arrow-right text-xs"></i>
+              </a>
+            </article>
+
+            <!-- Card 4: Hunter 3D Laser Alignment -->
+            <article data-category="alignment" class="service-card-item fl-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-5">
+                  <div class="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-500 flex items-center justify-center">
+                    <i class="fas fa-crosshairs text-2xl"></i>
+                  </div>
+                  <span
+                    class="font-mono-num text-sm font-extrabold px-3 py-1 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400"
+                    data-i18n="services.card4.price"
+                  >
+                    60 KM / komplet
+                  </span>
+                </div>
+                <h2 class="font-display text-xl font-bold text-slate-900 dark:text-white mb-2.5" data-i18n="services.card4.title">
+                  Hunter 3D Laserska Optika Trapa
+                </h2>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-5" data-i18n="services.card4.desc">
+                  Kompjutersko centriranje prednjeg i zadnjeg trapa u 4 tačke pomoću high-definition kamera za fabričku geometriju.
+                </p>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 mb-6">
+                  <li class="flex items-center gap-2">
+                    <i class="fas fa-check text-emerald-500"></i>
+                    <span data-i18n="services.card4.f1">Ispis dijagrama prije i poslije podešavanja</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fas fa-check text-emerald-500"></i>
+                    <span data-i18n="services.card4.f2">Kalibracija ugla volana u nulti položaj</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fas fa-check text-emerald-500"></i>
+                    <span data-i18n="services.card4.f3">Produžava vijek trajanja guma do 30%</span>
+                  </li>
+                </ul>
+              </div>
+              <a
+                href="appointments.html?service=optika"
+                class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-slate-900 dark:bg-slate-800 hover:bg-amber-500 dark:hover:bg-amber-500 text-white hover:text-slate-950 font-bold text-sm transition-colors"
+              >
+                <span data-i18n="home.srv.book_link">Rezerviši uslugu</span>
+                <i class="fas fa-arrow-right text-xs"></i>
+              </a>
+            </article>
+
+            <!-- Card 5: Tire Hotel -->
+            <article data-category="storage" class="service-card-item fl-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-5">
+                  <div class="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-500 flex items-center justify-center">
+                    <i class="fas fa-warehouse text-2xl"></i>
+                  </div>
+                  <span
+                    class="font-mono-num text-sm font-extrabold px-3 py-1 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400"
+                    data-i18n="services.card5.price"
+                  >
+                    50 KM / 6 mjeseci
+                  </span>
+                </div>
+                <h2 class="font-display text-xl font-bold text-slate-900 dark:text-white mb-2.5" data-i18n="services.card5.title">
+                  Hotel za Gume (Sezonsko Čuvanje)
+                </h2>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-5" data-i18n="services.card5.desc">
+                  Oslobodite prostor u svom domu. Čuvamo vaše gume u kontrolisanim uslovima zaštićenim od UV zraka i vlage.
+                </p>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 mb-6">
+                  <li class="flex items-center gap-2">
+                    <i class="fas fa-check text-emerald-500"></i>
+                    <span data-i18n="services.card5.f1">Mašinsko pranje točkova prije skladištenja</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fas fa-check text-emerald-500"></i>
+                    <span data-i18n="services.card5.f2">Zvanični zapisnik o stanju i dubini profila</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fas fa-check text-emerald-500"></i>
+                    <span data-i18n="services.card5.f3">Prioritetni termin prilikom naredne sezone</span>
+                  </li>
+                </ul>
+              </div>
+              <a
+                href="appointments.html?service=hotel"
+                class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-slate-900 dark:bg-slate-800 hover:bg-amber-500 dark:hover:bg-amber-500 text-white hover:text-slate-950 font-bold text-sm transition-colors"
+              >
+                <span data-i18n="home.srv.book_link">Rezerviši uslugu</span>
+                <i class="fas fa-arrow-right text-xs"></i>
+              </a>
+            </article>
+
+            <!-- Card 6: TPMS & Nitrogen -->
+            <article data-category="alignment" class="service-card-item fl-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-5">
+                  <div class="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-500 flex items-center justify-center">
+                    <i class="fas fa-microchip text-2xl"></i>
+                  </div>
+                  <span
+                    class="font-mono-num text-sm font-extrabold px-3 py-1 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400"
+                    data-i18n="services.card6.price"
+                  >
+                    15 – 65 KM
+                  </span>
+                </div>
+                <h2 class="font-display text-xl font-bold text-slate-900 dark:text-white mb-2.5" data-i18n="services.card6.title">
+                  TPMS Senzori &amp; Punjenje Azotom
+                </h2>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-5" data-i18n="services.card6.desc">
+                  Dijagnostika, programiranje i zamjena TPMS senzora pritiska te punjenje guma čistim azotom (N2) za stabilan pritisak.
+                </p>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 mb-6">
+                  <li class="flex items-center gap-2">
+                    <i class="fas fa-check text-emerald-500"></i>
+                    <span data-i18n="services.card6.f1">Čitanje stanja baterije TPMS senzora</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fas fa-check text-emerald-500"></i>
+                    <span data-i18n="services.card6.f2">Kodiranje zamjenskih senzora za sva EU/BiH vozila</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fas fa-check text-emerald-500"></i>
+                    <span data-i18n="services.card6.f3">Manje zagrijavanje gume na autoputu ljeti</span>
+                  </li>
+                </ul>
+              </div>
+              <a
+                href="appointments.html?service=tpms"
+                class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-slate-900 dark:bg-slate-800 hover:bg-amber-500 dark:hover:bg-amber-500 text-white hover:text-slate-950 font-bold text-sm transition-colors"
+              >
+                <span data-i18n="home.srv.book_link">Rezerviši uslugu</span>
+                <i class="fas fa-arrow-right text-xs"></i>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Cost Calculator & Full Price Table -->
+      <section class="py-16 bg-slate-100/80 dark:bg-slate-900/60 border-y border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+          <!-- Interactive Calculator -->
+          <div id="service-calculator" class="fl-card rounded-3xl p-6 sm:p-10">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+              <span
+                class="text-xs font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400"
+                data-i18n="services.calc.badge"
+              >
+                Interaktivni Kalkulator
+              </span>
+              <h2
+                class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1"
+                data-i18n="services.calc.title"
+              >
+                Izračunajte Tačan Iznos Vašeg Servisa
+              </h2>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mt-2" data-i18n="services.calc.subtitle">
+                Odaberite dimenziju felgi, broj guma i željene dodatne opcije.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              <!-- Options Column -->
+              <div class="lg:col-span-7 space-y-6">
+                <!-- Step 1: Rim Diameter -->
+                <div>
+                  <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-3" data-i18n="services.calc.rim_label">
+                    1. Odaberite dimenziju felgi
+                  </h3>
+                  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <label class="cursor-pointer">
+                      <input type="radio" name="calc-rim" value="small" data-rate="8" class="peer sr-only" />
+                      <div class="p-3 rounded-xl border border-slate-300 dark:border-slate-700 peer-checked:border-amber-500 peer-checked:bg-amber-500/15 text-center transition-all">
+                        <div class="font-mono-num font-bold text-sm">13" – 14"</div>
+                        <div class="text-xs text-slate-500 dark:text-slate-400">8 KM / kom</div>
+                      </div>
+                    </label>
+                    <label class="cursor-pointer">
+                      <input type="radio" name="calc-rim" value="medium" data-rate="10" checked class="peer sr-only" />
+                      <div class="p-3 rounded-xl border border-slate-300 dark:border-slate-700 peer-checked:border-amber-500 peer-checked:bg-amber-500/15 text-center transition-all">
+                        <div class="font-mono-num font-bold text-sm">15" – 16"</div>
+                        <div class="text-xs text-slate-500 dark:text-slate-400">10 KM / kom</div>
+                      </div>
+                    </label>
+                    <label class="cursor-pointer">
+                      <input type="radio" name="calc-rim" value="large" data-rate="13" class="peer sr-only" />
+                      <div class="p-3 rounded-xl border border-slate-300 dark:border-slate-700 peer-checked:border-amber-500 peer-checked:bg-amber-500/15 text-center transition-all">
+                        <div class="font-mono-num font-bold text-sm">17" – 18"</div>
+                        <div class="text-xs text-slate-500 dark:text-slate-400">13 KM / kom</div>
+                      </div>
+                    </label>
+                    <label class="cursor-pointer">
+                      <input type="radio" name="calc-rim" value="xlarge" data-rate="18" class="peer sr-only" />
+                      <div class="p-3 rounded-xl border border-slate-300 dark:border-slate-700 peer-checked:border-amber-500 peer-checked:bg-amber-500/15 text-center transition-all">
+                        <div class="font-mono-num font-bold text-sm">19" – 22"</div>
+                        <div class="text-xs text-slate-500 dark:text-slate-400">18 KM / kom</div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Step 2: Wheel Count -->
+                <div>
+                  <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-3" data-i18n="services.calc.count_label">
+                    2. Broj točkova
+                  </h3>
+                  <div class="grid grid-cols-3 gap-3">
+                    <label class="cursor-pointer">
+                      <input type="radio" name="calc-count" value="1" class="peer sr-only" />
+                      <div class="p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 peer-checked:border-amber-500 peer-checked:bg-amber-500/15 text-center font-mono-num font-bold text-sm">
+                        1
+                      </div>
+                    </label>
+                    <label class="cursor-pointer">
+                      <input type="radio" name="calc-count" value="2" class="peer sr-only" />
+                      <div class="p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 peer-checked:border-amber-500 peer-checked:bg-amber-500/15 text-center font-mono-num font-bold text-sm">
+                        2
+                      </div>
+                    </label>
+                    <label class="cursor-pointer">
+                      <input type="radio" name="calc-count" value="4" checked class="peer sr-only" />
+                      <div class="p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 peer-checked:border-amber-500 peer-checked:bg-amber-500/15 text-center font-mono-num font-bold text-sm">
+                        4 (Komplet)
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Step 3: Add-ons -->
+                <div>
+                  <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-3" data-i18n="services.calc.addons_label">
+                    3. Dodatne usluge
+                  </h3>
+                  <div class="space-y-2.5">
+                    <label class="flex items-center justify-between p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/50 cursor-pointer">
+                      <span class="flex items-center gap-3 text-sm font-medium">
+                        <input
+                          type="checkbox"
+                          checked
+                          data-price="3"
+                          data-per-wheel="true"
+                          class="calc-addon w-4 h-4 accent-amber-500 rounded"
+                        />
+                        <span data-i18n="services.calc.addon.balance">3D Lasersko balansiranje (preporučeno)</span>
+                      </span>
+                      <span class="font-mono-num text-xs font-bold text-amber-600 dark:text-amber-400">+3 KM / točak</span>
+                    </label>
+
+                    <label class="flex items-center justify-between p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/50 cursor-pointer">
+                      <span class="flex items-center gap-3 text-sm font-medium">
+                        <input
+                          type="checkbox"
+                          data-price="10"
+                          data-per-wheel="false"
+                          class="calc-addon w-4 h-4 accent-amber-500 rounded"
+                        />
+                        <span data-i18n="services.calc.addon.valves">Novi gumeni/hromirani ventili (4 kom)</span>
+                      </span>
+                      <span class="font-mono-num text-xs font-bold text-amber-600 dark:text-amber-400">+10 KM</span>
+                    </label>
+
+                    <label class="flex items-center justify-between p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/50 cursor-pointer">
+                      <span class="flex items-center gap-3 text-sm font-medium">
+                        <input
+                          type="checkbox"
+                          data-price="12"
+                          data-per-wheel="false"
+                          class="calc-addon w-4 h-4 accent-amber-500 rounded"
+                        />
+                        <span data-i18n="services.calc.addon.nitrogen">Punjenje guma azotom (N2)</span>
+                      </span>
+                      <span class="font-mono-num text-xs font-bold text-amber-600 dark:text-amber-400">+12 KM</span>
+                    </label>
+
+                    <label class="flex items-center justify-between p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/50 cursor-pointer">
+                      <span class="flex items-center gap-3 text-sm font-medium">
+                        <input
+                          type="checkbox"
+                          data-price="60"
+                          data-per-wheel="false"
+                          class="calc-addon w-4 h-4 accent-amber-500 rounded"
+                        />
+                        <span data-i18n="services.calc.addon.alignment">Hunter 3D Optika trapa</span>
+                      </span>
+                      <span class="font-mono-num text-xs font-bold text-amber-600 dark:text-amber-400">+60 KM</span>
+                    </label>
+
+                    <label class="flex items-center justify-between p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/50 cursor-pointer">
+                      <span class="flex items-center gap-3 text-sm font-medium">
+                        <input
+                          type="checkbox"
+                          data-price="50"
+                          data-per-wheel="false"
+                          class="calc-addon w-4 h-4 accent-amber-500 rounded"
+                        />
+                        <span data-i18n="services.calc.addon.hotel">Hotel za gume (6 mjeseci čuvanja)</span>
+                      </span>
+                      <span class="font-mono-num text-xs font-bold text-amber-600 dark:text-amber-400">+50 KM</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Summary Box -->
+              <div class="lg:col-span-5 bg-slate-900 dark:bg-slate-950 text-white rounded-2xl p-6 sm:p-8 border border-slate-800 space-y-5">
+                <h3 class="font-display text-xl font-bold border-b border-slate-800 pb-3" data-i18n="services.calc.summary_title">
+                  Specifikacija Troškova
+                </h3>
+                <div class="space-y-3 text-sm">
+                  <div class="flex items-center justify-between text-slate-300">
+                    <span data-i18n="services.calc.base_mount">Montaža i demontaža:</span>
+                    <span id="calc-base-cost" class="font-mono-num font-semibold">40 KM</span>
+                  </div>
+                  <div class="flex items-center justify-between text-slate-300">
+                    <span data-i18n="services.calc.addons_cost">Dodatne opcije:</span>
+                    <span id="calc-addons-cost" class="font-mono-num font-semibold">12 KM</span>
+                  </div>
+                  <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+                    <span class="font-bold text-base" data-i18n="services.calc.total">Ukupno za plaćanje:</span>
+                    <span id="calc-total-cost" class="font-mono-num text-3xl font-extrabold text-amber-400">52 KM</span>
+                  </div>
+                </div>
+                <a
+                  id="calc-book-btn"
+                  href="appointments.html"
+                  class="w-full inline-flex items-center justify-center gap-2 py-4 px-5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm shadow-lg transition-all"
+                >
+                  <i class="far fa-calendar-check"></i>
+                  <span data-i18n="services.calc.book_btn">Zakaži Termin sa Ovim Obračunom</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Transparent Price Table -->
+          <div>
+            <h2
+              class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white text-center mb-8"
+              data-i18n="services.table.title"
+            >
+              Pregledni Cjenovnik po Dimenzijama (u KM)
+            </h2>
+            <div class="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-900">
+              <table class="w-full text-left border-collapse text-sm">
+                <thead>
+                  <tr class="bg-slate-900 text-white">
+                    <th class="py-4 px-5 font-display font-bold" data-i18n="services.table.col_dim">Dimenzija Felge</th>
+                    <th class="py-4 px-5 font-display font-bold" data-i18n="services.table.col_steel">Čelične Felge (4 kom)</th>
+                    <th class="py-4 px-5 font-display font-bold" data-i18n="services.table.col_alloy">Alu Felge (4 kom)</th>
+                    <th class="py-4 px-5 font-display font-bold" data-i18n="services.table.col_single">Cijena po 1 točku</th>
+                    <th class="py-4 px-5 font-display font-bold" data-i18n="services.table.col_time">Vrijeme trajanja</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 dark:divide-slate-800 font-mono-num">
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                    <td class="py-4 px-5 font-sans font-semibold text-slate-900 dark:text-white" data-i18n="services.table.row1.dim">
+                      13" – 14" (Mali gradski auti)
+                    </td>
+                    <td class="py-4 px-5">40 KM</td>
+                    <td class="py-4 px-5 text-amber-600 dark:text-amber-400 font-bold">44 KM</td>
+                    <td class="py-4 px-5">11 KM</td>
+                    <td class="py-4 px-5 text-slate-500">~20 min</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                    <td class="py-4 px-5 font-sans font-semibold text-slate-900 dark:text-white" data-i18n="services.table.row2.dim">
+                      15" – 16" (Kompakt &amp; Limuzine)
+                    </td>
+                    <td class="py-4 px-5">48 KM</td>
+                    <td class="py-4 px-5 text-amber-600 dark:text-amber-400 font-bold">52 KM</td>
+                    <td class="py-4 px-5">13 KM</td>
+                    <td class="py-4 px-5 text-slate-500">~20 min</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                    <td class="py-4 px-5 font-sans font-semibold text-slate-900 dark:text-white" data-i18n="services.table.row3.dim">
+                      17" – 18" (Limuzine &amp; SUV)
+                    </td>
+                    <td class="py-4 px-5">60 KM</td>
+                    <td class="py-4 px-5 text-amber-600 dark:text-amber-400 font-bold">64 KM</td>
+                    <td class="py-4 px-5">16 KM</td>
+                    <td class="py-4 px-5 text-slate-500">~25 min</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                    <td class="py-4 px-5 font-sans font-semibold text-slate-900 dark:text-white" data-i18n="services.table.row4.dim">
+                      19" – 22" (Premium / RunFlat)
+                    </td>
+                    <td class="py-4 px-5">—</td>
+                    <td class="py-4 px-5 text-amber-600 dark:text-amber-400 font-bold">84 KM</td>
+                    <td class="py-4 px-5">21 KM</td>
+                    <td class="py-4 px-5 text-slate-500">~30 min</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                    <td class="py-4 px-5 font-sans font-semibold text-slate-900 dark:text-white" data-i18n="services.table.row5.dim">
+                      Kombi / Teretni (C-gume)
+                    </td>
+                    <td class="py-4 px-5">68 KM</td>
+                    <td class="py-4 px-5 text-amber-600 dark:text-amber-400 font-bold">76 KM</td>
+                    <td class="py-4 px-5">19 KM</td>
+                    <td class="py-4 px-5 text-slate-500">~30 min</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="font-display text-2xl sm:text-3xl font-extrabold text-center text-slate-900 dark:text-white mb-10"
+            data-i18n="services.faq.title"
+          >
+            Često Postavljana Pitanja (FAQ)
+          </h2>
+
+          <div class="space-y-4">
+            <!-- FAQ 1 -->
+            <div class="faq-item open fl-card rounded-2xl p-5">
+              <button
+                type="button"
+                class="faq-trigger w-full flex items-center justify-between gap-4 text-left font-display font-bold text-base sm:text-lg text-slate-900 dark:text-white"
+              >
+                <span data-i18n="services.faq.q1">Koliko traje kompletna zamjena i balansiranje 4 gume?</span>
+                <i class="fas fa-chevron-down faq-chevron text-amber-500 transition-transform"></i>
+              </button>
+              <div class="faq-content">
+                <p class="pt-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="services.faq.a1">
+                  Uz zakazan online termin, kompletna zamjena 4 gume sa kompjuterskim 3D balansiranjem traje između 20 i 30 minuta.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item fl-card rounded-2xl p-5">
+              <button
+                type="button"
+                class="faq-trigger w-full flex items-center justify-between gap-4 text-left font-display font-bold text-base sm:text-lg text-slate-900 dark:text-white"
+              >
+                <span data-i18n="services.faq.q2">Kada je zakonski obavezna zimska oprema u Bosni i Hercegovini?</span>
+                <i class="fas fa-chevron-down faq-chevron text-amber-500 transition-transform"></i>
+              </button>
+              <div class="faq-content">
+                <p class="pt-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="services.faq.a2">
+                  U BiH je zimska oprema zakonski obavezna od 1. novembra do 1. aprila, bez obzira na vremenske uslove. Preporučujemo zamjenu čim dnevne temperature padnu ispod 7°C.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item fl-card rounded-2xl p-5">
+              <button
+                type="button"
+                class="faq-trigger w-full flex items-center justify-between gap-4 text-left font-display font-bold text-base sm:text-lg text-slate-900 dark:text-white"
+              >
+                <span data-i18n="services.faq.q3">Da li radite sa RunFlat gumama i niskoprofilnim 20"+ felgama?</span>
+                <i class="fas fa-chevron-down faq-chevron text-amber-500 transition-transform"></i>
+              </button>
+              <div class="faq-content">
+                <p class="pt-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="services.faq.a3">
+                  Da! Naše Corghi beskontaktne mašine su specijalno opremljene plastičnim protektorima i ruka-pomagačima za sigurnu montažu RunFlat i UHP niskoprofilnih guma bez ikakvog rizika po felgu.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer class="bg-body-tertiary py-4 mt-5">
-      <div class="container text-center">
-        <p>&copy; Tarik Tire | Sva prava zadržana.</p>
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 pt-14 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-slate-800">
+          <div class="space-y-4">
+            <a href="index.html" class="flex items-center gap-3">
+              <img src="assets/img/favicon.jpg" alt="FastLane Logo" class="w-10 h-10 rounded-xl bg-white p-0.5" />
+              <span class="font-display text-xl font-extrabold text-white">
+                Fast<span class="text-amber-500">Lane</span> Sarajevo
+              </span>
+            </a>
+            <p class="text-sm text-slate-400 leading-relaxed" data-i18n="footer.desc">
+              Vodeći moderni vulkanizerski centar i auto servis u Sarajevu. Vrhunska oprema, stručno osoblje i beskompromisna briga o vašoj sigurnosti na putu.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4" data-i18n="footer.nav_title">Navigacija</h4>
+            <ul class="space-y-2.5 text-sm">
+              <li><a href="index.html" class="hover:text-amber-400 transition-colors" data-i18n="nav.home">Početna</a></li>
+              <li><a href="services.html" class="hover:text-amber-400 transition-colors" data-i18n="nav.services">Usluge</a></li>
+              <li><a href="appointments.html" class="hover:text-amber-400 transition-colors" data-i18n="nav.appointments">Termini</a></li>
+              <li><a href="location.html" class="hover:text-amber-400 transition-colors" data-i18n="nav.location">Lokacija</a></li>
+              <li><a href="about.html" class="hover:text-amber-400 transition-colors" data-i18n="nav.about">O nama</a></li>
+              <li><a href="contact.html" class="hover:text-amber-400 transition-colors" data-i18n="nav.contact">Kontakt</a></li>
+              <li><a href="privacy.html" class="hover:text-amber-400 transition-colors" data-i18n="nav.privacy">Privatnost</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4" data-i18n="footer.srv_title">Naše Usluge</h4>
+            <ul class="space-y-2.5 text-sm">
+              <li><a href="services.html" class="hover:text-amber-400 transition-colors" data-i18n="home.srv1.title">Sezonska zamjena guma</a></li>
+              <li><a href="services.html" class="hover:text-amber-400 transition-colors" data-i18n="home.srv2.title">Precizno 3D balansiranje</a></li>
+              <li><a href="services.html" class="hover:text-amber-400 transition-colors" data-i18n="home.srv3.title">3D Laserska optika trapa</a></li>
+              <li><a href="services.html" class="hover:text-amber-400 transition-colors" data-i18n="home.srv4.title">Sezonski Hotel za gume</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4" data-i18n="footer.contact_title">Kontakt &amp; Radno Vrijeme</h4>
+            <ul class="space-y-2.5 text-sm">
+              <li class="flex items-start gap-2.5">
+                <i class="fas fa-location-dot text-amber-500 mt-1"></i>
+                <span>Džemala Bijedića 160, 71000 Sarajevo, BiH</span>
+              </li>
+              <li class="flex items-center gap-2.5 font-mono-num">
+                <i class="fas fa-phone text-amber-500"></i>
+                <a href="tel:+38733712400" class="hover:text-amber-400">+387 33 712 400</a>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fas fa-envelope text-amber-500"></i>
+                <a href="mailto:info@fastlane.ba" class="hover:text-amber-400">info@fastlane.ba</a>
+              </li>
+              <li class="flex items-center gap-2.5 text-xs text-slate-400 pt-1">
+                <i class="far fa-clock text-amber-500"></i>
+                <span>Pon – Sub: 08:00 – 19:00</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <p data-i18n="footer.rights">© 2026 FastLane Sarajevo (Tarik Tires). Sva prava zadržana.</p>
+          <p data-i18n="footer.capstone">Univerzitetski Capstone Projekat — Frontend Web Programming (IBU Sarajevo)</p>
+        </div>
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/theme.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
