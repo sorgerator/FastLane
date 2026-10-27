@@ -4,7 +4,7 @@ A modern, mobile-first, bilingual (**Bosnian & English**) web application with *
 
 ---
 
-## Technology Stack
+## Tech Stack
 
 Strictly built using only the allowed frontend technologies:
 - **HTML5**: Semantic structure (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`), accessible ARIA attributes, and `data-i18n` localization hooks.
